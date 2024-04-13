@@ -3,6 +3,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 ALLOWED_HOSTS = ["*"]
@@ -73,6 +74,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.config.wsgi.application'
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.UNAA.sqlite3'),
+#     }
+# }
 
 DATABASES = {
     "default": {
@@ -111,7 +118,9 @@ NINJA_API_URL = '/api/'
 STATIC_URL = '/static/'
 # для сервера
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"), # для локального пользования
+# ]
 # MEDIA
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
 MEDIA_URL = '/media/'
@@ -134,12 +143,12 @@ CKEDITOR_CONFIGS = {
 }
 
 # STOREGE
-DEFAULT_FILE_STORAGE = "minio_storage.storage.MinioMediaStorage"
-MINIO_STORAGE_ENDPOINT = '10.11.13.23:9000'
-MINIO_STORAGE_ACCESS_KEY = 'Y2FkDiOCa82HME3t'
-MINIO_STORAGE_SECRET_KEY = 'F3rSWzq9aTt0ZzijntTB5e5aULx10Yqs'
-MINIO_STORAGE_USE_HTTPS = False
-MINIO_STORAGE_MEDIA_BUCKET_NAME = 'media'
-MINIO_STORAGE_AUTO_CREATE_MEDIA_BUCKET = True
-MINIO_STORAGE_STATIC_BUCKET_NAME = 'static'
-MINIO_STORAGE_AUTO_CREATE_STATIC_BUCKET = True
+# DEFAULT_FILE_STORAGE = "minio_storage.storage.MinioMediaStorage"
+# MINIO_STORAGE_ENDPOINT = '10.11.13.23:9000'
+# MINIO_STORAGE_ACCESS_KEY = 'Y2FkDiOCa82HME3t'
+# MINIO_STORAGE_SECRET_KEY = 'F3rSWzq9aTt0ZzijntTB5e5aULx10Yqs'
+# MINIO_STORAGE_USE_HTTPS = False
+# MINIO_STORAGE_MEDIA_BUCKET_NAME = 'media'
+# MINIO_STORAGE_AUTO_CREATE_MEDIA_BUCKET = True
+# MINIO_STORAGE_STATIC_BUCKET_NAME = 'static'
+# MINIO_STORAGE_AUTO_CREATE_STATIC_BUCKET = True
