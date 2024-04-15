@@ -5,9 +5,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ['http://10.11.13.101:8080']
+CSRF_TRUSTED_ORIGINS = [
+    'http://10.11.13.101:8080',
+    'http://backend.tsvs.kg:5544'
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -134,7 +137,7 @@ CKEDITOR_CONFIGS = {
 
 # STOREGE
 DEFAULT_FILE_STORAGE = "minio_storage.storage.MinioMediaStorage"
-MINIO_STORAGE_ENDPOINT = '10.11.13.23:9000'
+MINIO_STORAGE_ENDPOINT = 'http://storage.tsvs.kg:5554/'
 MINIO_STORAGE_ACCESS_KEY = 'Y2FkDiOCa82HME3t'
 MINIO_STORAGE_SECRET_KEY = 'F3rSWzq9aTt0ZzijntTB5e5aULx10Yqs'
 MINIO_STORAGE_USE_HTTPS = False
