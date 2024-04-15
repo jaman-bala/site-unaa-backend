@@ -52,8 +52,6 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://tsvs.gov.kg",
-    "http://10.11.13.100",
-    "http://localhost:3000"
 ]
 
 
@@ -77,12 +75,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.config.wsgi.application'
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.UNAA.sqlite3'),
-#     }
-# }
 
 DATABASES = {
     "default": {
@@ -121,9 +113,7 @@ NINJA_API_URL = '/api/'
 STATIC_URL = '/static/'
 # для сервера
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static"), # для локального пользования
-# ]
+
 # MEDIA
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
 MEDIA_URL = '/media/'
@@ -144,7 +134,6 @@ CKEDITOR_CONFIGS = {
             ]),
         },
 }
-
 # STOREGE
 DEFAULT_FILE_STORAGE = "minio_storage.storage.MinioMediaStorage"
 MINIO_STORAGE_ENDPOINT = 'http://storage.tsvs.kg:5554/'
