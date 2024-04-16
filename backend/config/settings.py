@@ -9,7 +9,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = [
     'http://10.11.13.101:8080',
-    'http://backend.tsvs.kg:5544'
+    'https://backend.tsvs.kg:5543'
 ]
 # Application definition
 
@@ -52,7 +52,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://tsvs.gov.kg",
+    "https://tsvs.gov.kg",
     "http://10.11.13.100",
 ]
 
