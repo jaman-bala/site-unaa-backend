@@ -12,14 +12,9 @@ router = Router()
 
 
 @router.get("/news", response=List[NewsOUT])
-@cache_page(60 * 60 * 20)
 def get_all_news(request):
-    cached_news = cache.get('all_news')
-    if cached_news is None:
-        qs = News.objects.all()
-        cached_news = [NewsOUT.from_orm(news).dict() for news in qs]
-        cache.set('all_news', cached_news, timeout=60 * 60 * 20)
-    return JsonResponse(cached_news, safe=False)
+    qs = News.objects.all()
+    return [NewsOUT.from_orm(news).dict() for news in qs]
 
 
 @router.get("/news/{news_pk}", response=NewsOUT)
