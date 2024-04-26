@@ -30,4 +30,3 @@ def get_all_contact(request):
 def get_contact_pk(request, contact_pk: int):
     qs = get_object_or_404(Contact, id=contact_pk)
     return qs
-

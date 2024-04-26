@@ -1,8 +1,12 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class History(models.Model):
-    title = models.TextField('История', max_length=6999, null=True, blank=True)
+    """Класс модели истории"""
+
+    title = RichTextUploadingField('История', blank=True)
+
     created_date = models.DateTimeField("Дата создания", auto_now_add=True)
     is_active = models.BooleanField("Активный", default=True)
 
@@ -15,10 +19,14 @@ class History(models.Model):
 
 
 class Management(models.Model):
+    """Класс модели руководства"""
+
     title = models.CharField('Должность', max_length=255)
     name = models.CharField('ФИО', max_length=255)
-    description = models.TextField('Биография')
+    description_ru = RichTextUploadingField('Биограция на русском')
+    description_kg = RichTextUploadingField('Биограция на кыргызском')
     avatar = models.ImageField('Аватар', upload_to="avatar/", blank=True)
+
     is_active = models.BooleanField("Активный", default=True)
     created_date = models.DateTimeField("Дата создания", auto_now_add=True)
 
@@ -31,10 +39,13 @@ class Management(models.Model):
 
 
 class Contact(models.Model):
+    """Класс модели контактов"""
+
     title = models.CharField("Наименование отдела", max_length=555, null=True, blank=True)
-    address = models.CharField('Адрес', max_length=555, null=True, blank=True)
+    address = models.TextField('Адрес', max_length=555, null=True, blank=True)
     phone = models.CharField('Контактные данные', max_length=555, null=True, blank=True)
-    time_job = models.CharField('Время и график работы', max_length=255, null=True, blank=True)
+    time_job = models.TextField('Время и график работы', max_length=255, null=True, blank=True)
+
     is_active = models.BooleanField("Активный", default=True)
     created_date = models.DateTimeField("Дата создания", auto_now_add=True)
 

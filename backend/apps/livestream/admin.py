@@ -4,4 +4,4 @@ from backend.apps.livestream.models import IPCamera
 
 @admin.register(IPCamera)
 class IPCamera(admin.ModelAdmin):
-    list_display = ('id', 'title')
+    list_display = ('title', )

@@ -6,14 +6,13 @@ from backend.apps.about.models import History, Management, Contact
 
 @admin.register(History)
 class History(admin.ModelAdmin):
-    list_display = ('id', 'title')
+    list_display = ('title', )
 
 
 @admin.register(Management)
 class Management(admin.ModelAdmin):
-    list_display = ('name', 'title', 'get_html_photo', 'created_date', 'is_active', 'id', )
+    list_display = ('name', 'title',  'get_html_photo', 'created_date', 'is_active', 'id',)
     list_editable = ('is_active',)
-    fields = ('name', 'title', 'avatar', 'get_html_photo', 'created_date', 'is_active',)
     readonly_fields = ('created_date', 'get_html_photo')
     save_on_top = True
 
@@ -26,4 +25,4 @@ class Management(admin.ModelAdmin):
 
 @admin.register(Contact)
 class Contact(admin.ModelAdmin):
-    list_display = ('id', 'title', 'created_date', 'is_active')
+    list_display = ('title', 'created_date', 'is_active')

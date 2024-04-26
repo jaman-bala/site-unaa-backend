@@ -2,6 +2,8 @@ from django.db import models
 
 
 class Register_Car01(models.Model):
+    """Класс модели регистрации прав собственности на автотранспорт"""
+
     number = models.CharField('№', max_length=599, blank=True, null=True)
     title = models.CharField('Наименование услуги', max_length=599, blank=True, null=True)
     price = models.CharField('Стоимость', max_length=599, blank=True, null=True)
@@ -18,6 +20,8 @@ class Register_Car01(models.Model):
 
 
 class Register_Car02(models.Model):
+    """Класс модели регистрации прав собственности на трактора и оборудование"""
+
     number = models.CharField('№', max_length=599, blank=True, null=True)
     title = models.CharField('Наименование услуги', max_length=599, blank=True, null=True)
     price = models.CharField('Стоимость', max_length=599, blank=True, null=True)
@@ -34,6 +38,8 @@ class Register_Car02(models.Model):
 
 
 class Issue_Car01(models.Model):
+    """Класс модели регистрации прав собственности на право управления транспортными средствами"""
+
     number = models.CharField('№', max_length=599, blank=True, null=True)
     title = models.CharField('Наименование услуги', max_length=599, blank=True, null=True)
     price = models.CharField('Стоимость', max_length=599, blank=True, null=True)
@@ -50,6 +56,8 @@ class Issue_Car01(models.Model):
 
 
 class Issue_Car02(models.Model):
+    """Класс модели регистрации прав собственности на право управления самоходными технологическими машинами"""
+
     number = models.CharField('№', max_length=599, blank=True, null=True)
     title = models.CharField('Наименование услуги', max_length=599, blank=True, null=True)
     price = models.CharField('Стоимость', max_length=599, blank=True, null=True)
@@ -66,6 +74,8 @@ class Issue_Car02(models.Model):
 
 
 class Confirmation(models.Model):
+    """Класс модели Подтверждение сведений о транспортных средствах и водительских удостоверениях"""
+
     number = models.CharField('№', max_length=599, blank=True, null=True)
     title = models.CharField('Наименование услуги', max_length=599, blank=True, null=True)
     price = models.CharField('Стоимость', max_length=599, blank=True, null=True)

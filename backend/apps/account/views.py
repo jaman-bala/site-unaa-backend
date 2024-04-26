@@ -25,6 +25,6 @@ def register(request, data: RegistrationInput):
 
 
 @router.get("/register", response=List[RegisterOUT])
-def get_register(request,):
+def get_register(request, ):
     qs = User.objects.all()
     return qs

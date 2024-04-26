@@ -2,6 +2,8 @@ from django.db import models
 
 
 class IPCamera(models.Model):
+    """Класс модели онлайн камер"""
+
     title = models.CharField(max_length=255)
     rtsp_url = models.CharField(max_length=200)
 

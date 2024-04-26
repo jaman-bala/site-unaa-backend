@@ -13,10 +13,12 @@ class NewsSchema(Schema):
     title_ky: str
     text_ru: str
     text_ky: str
+    url_youtube_ru: str
+    url_youtube_kg: str
     created_date: datetime
     published_date: datetime
     images: List[ImageSchema]
-    published: bool
+    is_published: bool
     viewed: int
     is_active: bool
 
@@ -27,7 +29,8 @@ class NewsOUT(Schema):
     title_ky: str
     text_ru: str
     text_ky: str
-    url_youtube: str
+    url_youtube_ru: str
+    url_youtube_kg: str
     published_date: datetime
     images: List[ImageSchema]
 

@@ -7,6 +7,8 @@ from backend.apps.service.models import CalculatorAllList, CalculatorCar, Calcul
 class CalculatorAllList(admin.ModelAdmin):
     list_display = ('car', 'volume', 'year', 'engine', 'sum', 'id', 'status')
     search_fields = ('car', 'volume', 'year', 'sum')
+    list_filter = ('car', 'volume')
+    list_per_page = 15
     save_on_top = True
 
 

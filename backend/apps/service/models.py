@@ -2,6 +2,8 @@ from django.db import models
 
 
 class CalculatorCar(models.Model):
+    """Класс модели тип"""
+
     car = models.CharField('Тип', max_length=155)
 
     def __str__(self):
@@ -12,6 +14,8 @@ class CalculatorCar(models.Model):
 
 
 class CalculatorVolume(models.Model):
+    """Класс модели объём"""
+
     volume = models.CharField('Объём', max_length=155)
 
     def __str__(self):
@@ -22,6 +26,8 @@ class CalculatorVolume(models.Model):
 
 
 class CalculatorYear(models.Model):
+    """Класс модели год"""
+
     year = models.CharField('Год', max_length=155)
 
     def __str__(self):
@@ -32,6 +38,8 @@ class CalculatorYear(models.Model):
 
 
 class CalculatorEngine(models.Model):
+    """Класс модели двигатель"""
+
     engine = models.CharField('Двигатель', max_length=155)
 
     def __str__(self):
@@ -42,6 +50,8 @@ class CalculatorEngine(models.Model):
 
 
 class CalculatorStatus(models.Model):
+    """Класс модели статуса"""
+
     status = models.CharField('Статус', max_length=155)
 
     def __str__(self):
@@ -52,6 +62,8 @@ class CalculatorStatus(models.Model):
 
 
 class CalculatorAllList(models.Model):
+    """Класс модели вывода данных калькулятора"""
+
     car = models.ForeignKey(CalculatorCar, verbose_name="Тип", on_delete=models.CASCADE)
     volume = models.ForeignKey(CalculatorVolume, verbose_name="Объём", on_delete=models.CASCADE, )
     year = models.ForeignKey(CalculatorYear, verbose_name="Год", on_delete=models.CASCADE)

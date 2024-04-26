@@ -7,6 +7,7 @@ class ServiceORM(Schema):
     descriptions: str
     url_link: str
     image: str
+    is_active: bool
 
 
 class ServiceORMOut(Schema):

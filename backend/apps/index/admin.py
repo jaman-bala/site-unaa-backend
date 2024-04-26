@@ -7,6 +7,6 @@ class Slider(admin.ModelAdmin):
     list_display = ('title', 'created_date', 'is_active', 'id')
 
 
-admin.site.site_title = 'Админ-панель сайта УНАА'
-admin.site.site_header = 'Админ-панель сайта УНАА'
+admin.site.site_title = 'ГАРТСВС при КМ КР'
+admin.site.site_header = 'Админ-панель ГАРТСВС при КМ КР'
 admin.site.index_title = 'СПИСОК ДАННЫХ'

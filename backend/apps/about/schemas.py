@@ -20,7 +20,8 @@ class Management(Schema):
     id: int
     title: str
     name: str
-    description: str
+    description_ru: str
+    description_kg: str
     avatar: str
     is_active: bool
     created_date: datetime
@@ -29,7 +30,8 @@ class Management(Schema):
 class ManagementOUT(Schema):
     title: str
     name: str
-    description: str
+    description_ru: str
+    description_kg: str
     avatar: str
 
     class Config:
@@ -54,4 +56,3 @@ class ContactOUT(Schema):
 
     class Config:
         orm_mode = True
-

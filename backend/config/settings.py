@@ -5,7 +5,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = [
     'http://10.11.13.101:8080',
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'ninja',
     'minio_storage',
     'ckeditor',
+    'ckeditor_uploader',
 
 ]
 
@@ -55,7 +56,6 @@ CORS_ALLOWED_ORIGINS = [
     "https://tsvs.gov.kg",
     "http://10.11.13.100",
 ]
-
 
 ROOT_URLCONF = 'backend.config.urls'
 
@@ -77,6 +77,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.config.wsgi.application'
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.NUMBERS'),
+#     }
+# }
 
 DATABASES = {
     "default": {
@@ -110,7 +116,6 @@ TIME_ZONE = 'Asia/Bishkek'
 USE_I18N = True
 USE_TZ = True
 
-
 NINJA_API_URL = '/api/'
 STATIC_URL = '/static/'
 # для сервера
@@ -122,21 +127,6 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CKEDITOR_UPLOAD_PATH = 'uploads/'
-CKEDITOR_IMAGE_BACKEND = "pillow"
-CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
-
-CKEDITOR_CONFIGS = {
-    'default':
-        {
-            'toolbar': 'full',
-            'width': 'auto',
-            'extraPlugins': ','.join([
-                'codesnippet',
-            ]),
-        },
-}
-
 # STOREGE
 # DEFAULT_FILE_STORAGE = "minio_storage.storage.MinioMediaStorage"
 # MINIO_STORAGE_ENDPOINT = 'http://storage.tsvs.kg:5554/'
@@ -147,3 +137,33 @@ CKEDITOR_CONFIGS = {
 # MINIO_STORAGE_AUTO_CREATE_MEDIA_BUCKET = True
 # MINIO_STORAGE_STATIC_BUCKET_NAME = 'static'
 # MINIO_STORAGE_AUTO_CREATE_STATIC_BUCKET = True
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+CKEDITOR_CONFIGS = {
+    'default':
+        {
+            'toolbar': 'full',
+            'width': '1450',
+            'extraPlugins': ','.join([
+                'codesnippet',
+                'div',
+                'autolink',
+                'autoembed',
+                'embedsemantic',
+                'autogrow',
+
+                'widget',
+                'lineutils',
+                'clipboard',
+                'dialog',
+                'dialogui',
+                'elementspath',
+
+                'mathjax',
+            ]),
+        },
+}
+
