@@ -14,7 +14,7 @@ class Job(models.Model):
     is_active = models.BooleanField("Активный", default=True)
 
     def __str__(self):
-        return self.title
+        return self.title_ru
 
     class Meta:
         verbose_name = 'Вакансия'
