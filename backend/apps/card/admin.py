@@ -6,8 +6,8 @@ from backend.apps.card.models import ServiceORM
 
 @admin.register(ServiceORM)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('title', 'descriptions', 'get_html_photo', 'id',)
-    search_fields = ('title',)
+    list_display = ('title_ru', 'descriptions_ru', 'get_html_photo', 'id',)
+    search_fields = ('title_ru',)
 
     def get_html_photo(self, object):
         if object.image:
