@@ -4,8 +4,10 @@ from django.db import models
 class ServiceORM(models.Model):
     """Класс модели сервиса"""
 
-    title = models.CharField('Наименование', max_length=105)
-    descriptions = models.TextField('Описание', max_length=145)
+    title_ru = models.CharField('Наименование на русском', max_length=105)
+    title_kg = models.CharField('Наименование на кыргызском', max_length=105)
+    descriptions_ru = models.TextField('Описание на русском', max_length=145)
+    descriptions_kg = models.TextField('Описание на кыргызском', max_length=145)
     url_link = models.URLField('Ссылка на страницу', max_length=699, blank=True)
     image = models.ImageField('Картина', upload_to="service/", blank=True)
 

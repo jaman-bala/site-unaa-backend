@@ -19,7 +19,8 @@ from backend.apps.appeal.views import router as appeal_router
 
 
 api = NinjaAPI(
-    title="Сайт ГУ Унаа"
+    title="Сайт ГУ Унаа",
+    docs_url=None,
 ) # auth=django_auth, csrf=True
 
 api.add_router(
