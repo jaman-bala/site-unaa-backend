@@ -49,3 +49,23 @@ class ConfirmationBase(Schema):
 class ConfirmationOut(ConfirmationBase):
     class Config:
         orm_mode = True
+
+
+class FaqBase(Schema):
+    question_ru: str
+    question_kg: str
+    answer_ru: str
+    answer_kg: str
+    created_date: datetime
+    is_active: bool
+
+
+class FaqOUT(Schema):
+    id: int
+    question_ru: str
+    question_kg: str
+    answer_ru: str
+    answer_kg: str
+
+    class Config:
+        orm_mode = True

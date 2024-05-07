@@ -2,7 +2,8 @@ from typing import List
 from ninja import Router
 
 from backend.apps.information.models import Register_Car01, Register_Car02, Issue_Car01, Issue_Car02, Confirmation
-from backend.apps.information.schemas import RegisterCar01, RegisterCar02, IssueCar01, IssueCar02, ConfirmationOut
+from backend.apps.information.schemas import RegisterCar01, RegisterCar02, IssueCar01, IssueCar02, ConfirmationOut, FaqOUT
+from backend.apps.information.faq import FaqModels
 
 router = Router()
 
@@ -34,4 +35,10 @@ def get_issu02(request):
 @router.get("/conf", response=List[ConfirmationOut])
 def get_conf(request):
     qs = Confirmation.objects.all()
+    return qs
+
+
+@router.get("/faq", response=List[FaqOUT])
+def get_faq(request):
+    qs = FaqModels.objects.all()
     return qs
