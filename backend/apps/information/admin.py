@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from backend.apps.information.models import Register_Car01, Register_Car02, Issue_Car01, Issue_Car02, Confirmation
-from backend.apps.information.faq import FaqModels
+from backend.apps.information.faq import FaqModelsTS, FaqModelsVS
 
 
 @admin.register(Register_Car01)
@@ -29,6 +29,11 @@ class ConfirmationAdmin(admin.ModelAdmin):
     list_display = ('title', 'price', 'created_date', 'is_active', 'id')
 
 
-@admin.register(FaqModels)
+@admin.register(FaqModelsTS)
+class FaqAdmin(admin.ModelAdmin):
+    list_display = ('question_ru', 'is_active', 'created_date')
+
+
+@admin.register(FaqModelsVS)
 class FaqAdmin(admin.ModelAdmin):
     list_display = ('question_ru', 'is_active', 'created_date')

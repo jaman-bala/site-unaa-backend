@@ -3,7 +3,7 @@ from ninja import Router
 
 from backend.apps.information.models import Register_Car01, Register_Car02, Issue_Car01, Issue_Car02, Confirmation
 from backend.apps.information.schemas import RegisterCar01, RegisterCar02, IssueCar01, IssueCar02, ConfirmationOut, FaqOUT
-from backend.apps.information.faq import FaqModels
+from backend.apps.information.faq import FaqModelsTS, FaqModelsVS
 
 router = Router()
 
@@ -38,7 +38,13 @@ def get_conf(request):
     return qs
 
 
-@router.get("/faq", response=List[FaqOUT])
+@router.get("/faq-ts", response=List[FaqOUT])
 def get_faq(request):
-    qs = FaqModels.objects.all()
+    qs = FaqModelsTS.objects.all()
+    return qs
+
+
+@router.get("/faq-vs", response=List[FaqOUT])
+def get_faq(request):
+    qs = FaqModelsVS.objects.all()
     return qs
