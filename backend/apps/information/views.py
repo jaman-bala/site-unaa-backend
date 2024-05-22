@@ -2,8 +2,10 @@ from typing import List
 from ninja import Router
 
 from backend.apps.information.models import Register_Car01, Register_Car02, Issue_Car01, Issue_Car02, Confirmation
-from backend.apps.information.schemas import RegisterCar01, RegisterCar02, IssueCar01, IssueCar02, ConfirmationOut, FaqOUT
+from backend.apps.information.schemas import RegisterCar01, RegisterCar02, IssueCar01, IssueCar02, ConfirmationOut, \
+    FaqOUT, PdfOUT
 from backend.apps.information.faq import FaqModelsTS, FaqModelsVS
+from backend.apps.information.pdf import PdfGet
 
 router = Router()
 
@@ -47,4 +49,10 @@ def get_faq(request):
 @router.get("/faq-vs", response=List[FaqOUT])
 def get_faq(request):
     qs = FaqModelsVS.objects.all()
+    return qs
+
+
+@router.get("/forms", response=List[PdfOUT])
+def get_pdf(request):
+    qs = PdfGet.objects.all()
     return qs

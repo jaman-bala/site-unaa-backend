@@ -69,3 +69,19 @@ class FaqOUT(Schema):
 
     class Config:
         orm_mode = True
+
+
+class PdfBase(Schema):
+    title: str
+    pdf: str
+    created_date: datetime
+    is_active: bool
+
+
+class PdfOUT(Schema):
+    id: int
+    title: str
+    pdf: str
+
+    class Config:
+        orm_mode = True
