@@ -42,9 +42,9 @@ class Contact(models.Model):
     """Класс модели контактов"""
 
     title = models.CharField("Наименование отдела", max_length=555, null=True, blank=True)
-    address = models.TextField('Адрес', max_length=555, null=True, blank=True)
+    address = RichTextUploadingField('Адрес', max_length=555, null=True, blank=True)
     phone = models.CharField('Контактные данные', max_length=555, null=True, blank=True)
-    time_job = models.TextField('Время и график работы', max_length=255, null=True, blank=True)
+    time_job = RichTextUploadingField('Время и график работы', max_length=255, null=True, blank=True)
 
     is_active = models.BooleanField("Активный", default=True)
     created_date = models.DateTimeField("Дата создания", auto_now_add=True)

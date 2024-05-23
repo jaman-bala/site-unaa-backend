@@ -1,6 +1,22 @@
 from django.contrib import admin
 
-from backend.apps.license.models import License
+from backend.apps.license.models import License, Documents, DocumentsNPA
+from backend.apps.license.pdf import PdfGet
+
+
+@admin.register(Documents)
+class DocumentsAdmin(admin.ModelAdmin):
+    list_display = ('title_ru', 'created_date', 'is_active')
+
+
+@admin.register(PdfGet)
+class PdfAdmin(admin.ModelAdmin):
+    list_display = ('title', 'is_active', 'created_date')
+
+
+@admin.register(DocumentsNPA)
+class DocumentsNPAdmin(admin.ModelAdmin):
+    list_display = ('title_ru', 'is_active', 'created_date')
 
 
 @admin.register(License)
@@ -11,3 +27,6 @@ class LicenseAdmin(admin.ModelAdmin):
     list_filter = ('is_active', 'created_date')
     list_per_page = 15
     save_on_top = True
+
+
+

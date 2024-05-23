@@ -61,7 +61,7 @@ api.add_router(
 )
 
 api.add_router(
-    "api/",
+    "api/license",
     license_router,
     tags=["Вывод лицензии"]
 )

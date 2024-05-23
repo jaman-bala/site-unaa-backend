@@ -2,7 +2,6 @@ from django.contrib import admin
 
 from backend.apps.information.models import Register_Car01, Register_Car02, Issue_Car01, Issue_Car02, Confirmation
 from backend.apps.information.faq import FaqModelsTS, FaqModelsVS
-from backend.apps.information.pdf import PdfGet
 
 
 @admin.register(Register_Car01)
@@ -40,7 +39,4 @@ class FaqAdmin(admin.ModelAdmin):
     list_display = ('question_ru', 'is_active', 'created_date')
 
 
-@admin.register(PdfGet)
-class PdfAdmin(admin.ModelAdmin):
-    list_display = ('title', 'is_active', 'created_date')
 
