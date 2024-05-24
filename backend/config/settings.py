@@ -57,6 +57,28 @@ CORS_ALLOWED_ORIGINS = [
     "https://tsvs.gov.kg",
 ]
 
+# Разрешить доступ к определенным заголовкам
+CORS_ALLOW_HEADERS = [
+    'content-disposition',
+    'content-type',
+    'accept',
+    'origin',
+    'authorization',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS',
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
 ROOT_URLCONF = 'backend.config.urls'
 
 TEMPLATES = [
