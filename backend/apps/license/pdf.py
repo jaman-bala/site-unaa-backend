@@ -5,6 +5,7 @@ class PdfGet(models.Model):
     """Класс модели PDF"""
 
     title = models.CharField('Наименование', max_length=599, blank=True)
+    banner = models.ImageField("Банер", max_length=599, blank=True)
     pdf = models.FileField('Вставка файла', upload_to="pdf/", blank=True)
 
     is_active = models.BooleanField("Активный", default=True)
