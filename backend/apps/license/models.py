@@ -21,24 +21,24 @@ class Documents(models.Model):
         verbose_name_plural = 'Перечни'
 
 
-class DocumentsPDF(models.Model):
-    """Класс модели PDF"""
-
-    license_title = models.CharField('Наименование', max_length=599, blank=True)
-
-    banner = models.ImageField("Банер", upload_to="banner/", blank=True)
-    documents_pdf = models.FileField('Вставка файла', upload_to="pdf/", blank=True)
-
-    is_active = models.BooleanField("Активный", default=True)
-    created_date = models.DateTimeField("Дата создания", auto_now_add=True)
-    update_date = models.DateTimeField('Дата обновления', auto_now=True)
-
-    def __str__(self):
-        return self.license_title
-
-    class Meta:
-        verbose_name = 'Форму'
-        verbose_name_plural = 'Форма бланков'
+# class DocumentsPDF(models.Model):
+#     """Класс модели PDF"""
+#
+#     license_title = models.CharField('Наименование', max_length=599, blank=True)
+#
+#     banner = models.ImageField("Банер", upload_to="banner/", blank=True)
+#     documents_pdf = models.FileField('Вставка файла', upload_to="pdf/", blank=True)
+#
+#     is_active = models.BooleanField("Активный", default=True)
+#     created_date = models.DateTimeField("Дата создания", auto_now_add=True)
+#     update_date = models.DateTimeField('Дата обновления', auto_now=True)
+#
+#     def __str__(self):
+#         return self.license_title
+#
+#     class Meta:
+#         verbose_name = 'Формы'
+#         verbose_name_plural = 'Формы бланков'
 
 
 class DocumentsNPA(models.Model):
