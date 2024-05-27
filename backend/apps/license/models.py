@@ -31,7 +31,7 @@ class DocumentsPDF(models.Model):
 
     is_active = models.BooleanField("Активный", default=True)
     created_date = models.DateTimeField("Дата создания", auto_now_add=True)
-    update = models.DateTimeField('Дата обновления', auto_now=True)
+    update_date = models.DateTimeField('Дата обновления', auto_now=True)
 
     def __str__(self):
         return self.license_title

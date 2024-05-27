@@ -84,7 +84,7 @@ class DocumentsPDFBase(Schema):
     pdf: str
 
     created_date: datetime
-    update: datetime
+    update_date: datetime
     is_active: bool
 
 
