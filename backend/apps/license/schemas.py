@@ -77,23 +77,23 @@ class LicenseOUT(Schema):
         orm_mode = True
 
 
-# class DocumentsPDFBase(Schema):
-#     title: str
-#
-#     banner: str
-#     pdf: str
-#
-#     created_date: datetime
-#     update_date: datetime
-#     is_active: bool
-#
-#
-# class DocumentsPDFOUT(Schema):
-#     id: int
-#     title: str
-#
-#     banner: str
-#     pdf: str
-#
-#     class Config:
-#         orm_mode = True
+class DocumentsPDFBase(Schema):
+    title: str
+
+    banner: str
+    documents_pdf: str
+
+    created_date: datetime
+    update_date: datetime
+    is_active: bool
+
+
+class DocumentsPDFOUT(Schema):
+    id: int
+    title: str
+
+    banner: str
+    documents_pdf: str
+
+    class Config:
+        orm_mode = True
