@@ -1,9 +1,9 @@
 from typing import List
 from ninja import Router
 
-from backend.apps.license.models import License, Documents, DocumentsNPA
+from backend.apps.license.models import License, Documents, DocumentsNPA, PdfGet
 from backend.apps.license.schemas import LicenseOUT, PdfOUT, DocumentsOUT, DocumentsNPAOUT
-from backend.apps.license.pdf import PdfGet
+
 
 router = Router()
 

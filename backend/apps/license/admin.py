@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from backend.apps.license.models import License, Documents, DocumentsNPA
-from backend.apps.license.pdf import PdfGet
+from backend.apps.license.models import License, Documents, DocumentsNPA, PdfGet
 
 
 @admin.register(Documents)

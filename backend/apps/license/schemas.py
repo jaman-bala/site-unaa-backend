@@ -79,8 +79,10 @@ class LicenseOUT(Schema):
 
 class PdfBase(Schema):
     title: str
+
     banner: str
     pdf: str
+
     created_date: datetime
     is_active: bool
 
@@ -88,6 +90,7 @@ class PdfBase(Schema):
 class PdfOUT(Schema):
     id: int
     title: str
+
     banner: str
     pdf: str
 
