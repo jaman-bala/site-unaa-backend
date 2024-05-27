@@ -12,6 +12,7 @@ from backend.apps.about.views import router as about_router
 from backend.apps.service.views import router as service_router
 from backend.apps.information.views import router as info_router
 from backend.apps.license.views import router as license_router
+from backend.apps.blank.views import router as blank_router
 from backend.apps.job.views import router as job_router
 from backend.apps.livestream.views import router as stream_router
 from backend.apps.account.views import router as register_router
@@ -64,6 +65,12 @@ api.add_router(
     "api/license",
     license_router,
     tags=["Вывод лицензии"]
+)
+
+api.add_router(
+    "api/blank",
+    blank_router,
+    tags=["Бланки"]
 )
 
 api.add_router(

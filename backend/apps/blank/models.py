@@ -17,5 +17,5 @@ class PDF(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = 'Формы'
-        verbose_name_plural = 'Формы бланков'
+        verbose_name = 'Бланк'
+        verbose_name_plural = 'Бланки'

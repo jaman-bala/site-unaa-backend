@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'backend.apps.job',
     'backend.apps.card',
     'backend.apps.license',
+    'backend.apps.blank',
 
     # library
     'ninja',
