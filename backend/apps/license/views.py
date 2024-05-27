@@ -26,7 +26,7 @@ def get_documents_npa(request):
     return qs
 
 
-@router.get("/license", response=List[LicenseOUT])
+@router.get("/car", response=List[LicenseOUT])
 def get_license(request):
     qs = License.objects.all()
     return qs
