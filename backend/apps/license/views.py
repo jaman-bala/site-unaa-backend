@@ -1,8 +1,9 @@
 from typing import List
 from ninja import Router
 
-from backend.apps.license.models import License, Documents, DocumentsNPA, DocumentsPDF
-from backend.apps.license.schemas import LicenseOUT, DocumentsOUT, DocumentsNPAOUT, DocumentsPDFOUT
+from backend.apps.license.models import License, Documents, DocumentsNPA
+from backend.apps.license.file import PDF
+from backend.apps.license.schemas import LicenseOUT, DocumentsOUT, DocumentsNPAOUT, PDFOut
 
 router = Router()
 
@@ -13,9 +14,9 @@ def get_documents(request):
     return qs
 
 
-@router.get("/sample", response=List[DocumentsPDFOUT])
+@router.get("/sample", response=List[PDFOut])
 def get_pdf(request):
-    qs = DocumentsPDF.objects.all()
+    qs = PDF.objects.all()
     return qs
 
 

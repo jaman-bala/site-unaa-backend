@@ -1,16 +1,12 @@
 from django.contrib import admin
 
-from backend.apps.license.models import License, Documents, DocumentsNPA, DocumentsPDF
+from backend.apps.license.models import License, Documents, DocumentsNPA
+from backend.apps.license.file import PDF
 
 
 @admin.register(Documents)
 class DocumentsAdmin(admin.ModelAdmin):
     list_display = ('title_ru', 'created_date', 'is_active')
-
-
-@admin.register(DocumentsPDF)
-class PdfAdmin(admin.ModelAdmin):
-    list_display = ('title', 'is_active', 'created_date', 'update_date')
 
 
 @admin.register(DocumentsNPA)
@@ -28,4 +24,6 @@ class LicenseAdmin(admin.ModelAdmin):
     save_on_top = True
 
 
-
+@admin.register(PDF)
+class FileAdmin(admin.ModelAdmin):
+    list_display = ('title', 'is_active', 'created_date', 'update_date')
