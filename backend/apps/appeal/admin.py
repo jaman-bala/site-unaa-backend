@@ -11,12 +11,12 @@ class DepartmentAdmin(admin.ModelAdmin):
 @admin.register(Appeal)
 class AppealAdmin(admin.ModelAdmin):
     list_display = (
-        'created_date',
-        'nearest_department',
         'full_name',
+        'nearest_department',
         'phone_number',
         'email',
         'car_number',
+        'created_date',
         'is_active',
         'id'
     )
