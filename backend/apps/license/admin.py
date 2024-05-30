@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from backend.apps.license.models import License, Documents, DocumentsNPA
+from backend.apps.license.models import License, Documents, DocumentsNPA, DopDoc, RatingSchool
 
 
 @admin.register(Documents)
@@ -23,4 +23,11 @@ class LicenseAdmin(admin.ModelAdmin):
     save_on_top = True
 
 
+@admin.register(DopDoc)
+class DopDocAdmin(admin.ModelAdmin):
+    list_display = ('title_ru', 'is_active', 'created_date', 'update_date')
 
+
+@admin.register(RatingSchool)
+class RatingSchoolAdmin(admin.ModelAdmin):
+    list_display = ('title_ru', 'is_active', 'created_date', 'update_date')
