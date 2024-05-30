@@ -66,20 +66,5 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'Лизензии для автошкол',
             },
         ),
-        migrations.CreateModel(
-            name='PDF',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(blank=True, max_length=599, verbose_name='Наименование')),
-                ('banner', models.ImageField(blank=True, upload_to='banner/', verbose_name='Банер')),
-                ('file', models.FileField(blank=True, upload_to='pdf/', verbose_name='Вставка файла')),
-                ('is_active', models.BooleanField(default=True, verbose_name='Активный')),
-                ('created_date', models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')),
-                ('update_date', models.DateTimeField(auto_now=True, verbose_name='Дата обновления')),
-            ],
-            options={
-                'verbose_name': 'Формы',
-                'verbose_name_plural': 'Формы бланков',
-            },
-        ),
+
     ]
