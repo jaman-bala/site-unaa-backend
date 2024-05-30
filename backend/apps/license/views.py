@@ -1,8 +1,23 @@
 from typing import List
 from ninja import Router
 
-from backend.apps.license.models import License, Documents, DocumentsNPA, DopDoc, RegionCategories, RatingSchool
-from backend.apps.license.schemas import LicenseOUT, DocumentsOUT, DocumentsNPAOUT, DopDocSchemasOUT, RegionCategoriesOUT, RatingSchoolOUT
+from backend.apps.license.models import License
+from backend.apps.license.models import Documents
+from backend.apps.license.models import DocumentsNPA
+from backend.apps.license.models import DopDoc
+from backend.apps.license.models import RegionCategories
+from backend.apps.license.models import RatingSchool
+from backend.apps.license.models import Props
+
+from backend.apps.license.schemas import LicenseOUT
+from backend.apps.license.schemas import DocumentsOUT
+from backend.apps.license.schemas import DocumentsNPAOUT
+from backend.apps.license.schemas import DopDocSchemasOUT
+from backend.apps.license.schemas import RegionCategoriesOUT
+from backend.apps.license.schemas import RatingSchoolOUT
+from backend.apps.license.schemas import PropsSchemasOUT
+from backend.apps.license.schemas import ContactSchemasOUT
+
 
 router = Router()
 
@@ -41,3 +56,16 @@ def get_dop(request):
 def get_rating(request):
     qs = RatingSchool.objects.all()
     return qs
+
+
+@router.get("/props", response=List[PropsSchemasOUT])
+def get_props(request):
+    qs = Props.objects.all()
+    return qs
+
+
+@router.get("/contact", response=List[ContactSchemasOUT])
+def get_contact(request):
+    qs = Contact.objects.all()
+    return qs
+
