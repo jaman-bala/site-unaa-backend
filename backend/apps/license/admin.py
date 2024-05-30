@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from backend.apps.license.models import License, Documents, DocumentsNPA, DopDoc, RatingSchool
+from backend.apps.license.models import License, Documents, DocumentsNPA, DopDoc, RatingSchool, RegionCategories
 
 
 @admin.register(Documents)
@@ -31,3 +31,8 @@ class DopDocAdmin(admin.ModelAdmin):
 @admin.register(RatingSchool)
 class RatingSchoolAdmin(admin.ModelAdmin):
     list_display = ('title_ru', 'is_active', 'created_date', 'update_date')
+
+
+@admin.register(RegionCategories)
+class RegionCategoriesAdmin(admin.ModelAdmin):
+    list_display = ('title', 'is_active', 'created_date', 'update_date')
