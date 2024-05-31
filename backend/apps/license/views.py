@@ -7,7 +7,8 @@ from backend.apps.license.models import DocumentsNPA
 from backend.apps.license.models import DopDoc
 from backend.apps.license.models import RegionCategories
 from backend.apps.license.models import RatingSchool
-from backend.apps.license.models import Props
+from backend.apps.license.models import VisualDocuments
+from backend.apps.license.models import BusinessContact
 
 from backend.apps.license.schemas import LicenseOUT
 from backend.apps.license.schemas import DocumentsOUT
@@ -15,8 +16,8 @@ from backend.apps.license.schemas import DocumentsNPAOUT
 from backend.apps.license.schemas import DopDocSchemasOUT
 from backend.apps.license.schemas import RegionCategoriesOUT
 from backend.apps.license.schemas import RatingSchoolOUT
-from backend.apps.license.schemas import PropsSchemasOUT
-from backend.apps.license.schemas import ContactSchemasOUT
+from backend.apps.license.schemas import VisualDocumentsSchemasOUT
+from backend.apps.license.schemas import BusinessContactSchemasOUT
 
 
 router = Router()
@@ -58,14 +59,14 @@ def get_rating(request):
     return qs
 
 
-# @router.get("/props", response=List[PropsSchemasOUT])
-# def get_props(request):
-#     qs = Props.objects.all()
-#     return qs
-#
-#
-# @router.get("/contact", response=List[ContactSchemasOUT])
-# def get_contact(request):
-#     qs = Contact.objects.all()
-#     return qs
-#
+@router.get("/props", response=List[VisualDocumentsSchemasOUT])
+def get_props(request):
+    qs = VisualDocuments.objects.all()
+    return qs
+
+
+@router.get("/contact", response=List[BusinessContactSchemasOUT])
+def get_contact(request):
+    qs = BusinessContact.objects.all()
+    return qs
+

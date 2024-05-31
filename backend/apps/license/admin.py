@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from backend.apps.license.models import License, Documents, DocumentsNPA, DopDoc, RatingSchool, RegionCategories, Props, Contact
+from backend.apps.license.models import License, Documents, DocumentsNPA, DopDoc, RatingSchool, RegionCategories, VisualDocuments, BusinessContact
 
 
 @admin.register(Documents)
@@ -48,11 +48,11 @@ class RegionCategoriesAdmin(admin.ModelAdmin):
     save_on_top = True
 
 
-# @admin.register(Props)
-# class PropsAdmin(admin.ModelAdmin):
-#     list_display = ('title_ru', 'is_active', 'created_date', 'update_date')
-#
-#
-# @admin.register(Contact)
-# class ContactAdmin(admin.ModelAdmin):
-#     list_display = ('title_ru', 'is_active', 'created_date', 'update_date')
+@admin.register(VisualDocuments)
+class PropsAdmin(admin.ModelAdmin):
+    list_display = ('title_ru', 'is_active', 'created_date', 'update_date')
+
+
+@admin.register(BusinessContact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('title_ru', 'is_active', 'created_date', 'update_date')
