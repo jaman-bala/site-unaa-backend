@@ -139,6 +139,7 @@ class RatingSchoolOUT(Schema):
     logo: str
     title_ru: str
     title_kg: str
+
     percent_true: str
     percent_false: str
 

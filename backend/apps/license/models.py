@@ -90,7 +90,6 @@ class RegionCategories(models.Model):
     """Класс модели Регионы"""
 
     title = models.CharField('Регион', max_length=599, blank=True)
-
     is_active = models.BooleanField("Активный", default=True)
     created_date = models.DateTimeField("Дата создания", auto_now_add=True)
     update_date = models.DateTimeField('Дата обновления', auto_now=True)
@@ -99,8 +98,8 @@ class RegionCategories(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = 'Регионы'
-        verbose_name_plural = 'Регион'
+        verbose_name = 'Регион'
+        verbose_name_plural = 'Регионы'
 
 
 class RatingSchool(models.Model):
@@ -108,8 +107,8 @@ class RatingSchool(models.Model):
 
     regions = models.ForeignKey(RegionCategories, verbose_name='Регион', on_delete=models.CASCADE)
     logo = models.ImageField('Логотип', upload_to="license/logo", blank=True)
-    title_ru = models.CharField('Наименование на русском', max_length=599, blank=True)
-    title_kg = models.CharField('Наименование на кыргызском', max_length=599, blank=True)
+    title_ru = RichTextUploadingField('Наименование на русском', max_length=599, blank=True)
+    title_kg = RichTextUploadingField('Наименование на кыргызском', max_length=599, blank=True)
     percent_true = models.CharField('Процент прошедших', max_length=6, blank=True)
     percent_false = models.CharField('Процент непрошедших', max_length=6, blank=True)
 
@@ -121,7 +120,7 @@ class RatingSchool(models.Model):
         return self.title_ru
 
     class Meta:
-        verbose_name = 'Рейтинг'
-        verbose_name_plural = 'Рейтинг автошкол'
+        verbose_name = 'Рейтинг автошкол'
+        verbose_name_plural = 'Рейтинги автошкол'
 
 
