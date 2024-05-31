@@ -22,3 +22,49 @@ class PDFOut(Schema):
 
     class Config:
         orm_mode = True
+
+
+class VisualDocumentsSchemas(Schema):
+    id: int
+    title_ru: str
+    title_kg: str
+    text_ru: str
+    text_ky: str
+
+    is_active: bool
+    created_date: datetime
+    update_date: datetime
+
+
+class VisualDocumentsSchemasOUT(Schema):
+    id: int
+    title_ru: str
+    title_kg: str
+    text_ru: str
+    text_ky: str
+
+    class Config:
+        orm_mode = True
+
+
+class BusinessContactSchemas(Schema):
+    id: int
+    title_ru: str
+    title_kg: str
+    text_ru: str
+    text_ky: str
+
+    is_active: bool
+    created_date: datetime
+    update_date: datetime
+
+
+class BusinessContactSchemasOUT(Schema):
+    id: int
+    title_ru: str
+    title_kg: str
+    text_ru: str
+    text_ky: str
+
+    class Config:
+        orm_mode = True
