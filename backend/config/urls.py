@@ -13,6 +13,7 @@ from backend.apps.service.views import router as service_router
 from backend.apps.information.views import router as info_router
 from backend.apps.license.views import router as license_router
 from backend.apps.blank.views import router as blank_router
+from backend.apps.rating.views import router as rating_router
 from backend.apps.job.views import router as job_router
 from backend.apps.livestream.views import router as stream_router
 from backend.apps.account.views import router as register_router
@@ -22,7 +23,7 @@ from backend.apps.appeal.views import router as appeal_router
 
 api = NinjaAPI(
     title="Сайт ГАРТСВС при КМ КР", # наименование проекта
-    docs_url=None, # закрыть доступ к документации docs
+   # docs_url=None, # закрыть доступ к документации docs
 ) # auth=django_auth, csrf=True
 
 api.add_router(
@@ -71,6 +72,12 @@ api.add_router(
     "api/blank",
     blank_router,
     tags=["Бланки"]
+)
+
+api.add_router(
+    "api/rating",
+    rating_router,
+    tags=["Рейтинг автошкол"]
 )
 
 api.add_router(

@@ -2,9 +2,9 @@ from typing import List
 from ninja import Router
 
 from backend.apps.blank.documents import VisualDocuments, BusinessContact
-from backend.apps.blank.models import PDF, RegionCategories, RatingSchool
-from backend.apps.blank.schemas import PDFOut, VisualDocumentsSchemasOUT, BusinessContactSchemasOUT, \
-    RegionCategoriesOUT, RatingSchoolOUT
+from backend.apps.blank.models import PDF
+from backend.apps.blank.schemas import PDFOut, VisualDocumentsSchemasOUT, BusinessContactSchemasOUT
+
 
 router = Router()
 
