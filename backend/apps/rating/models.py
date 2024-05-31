@@ -6,7 +6,6 @@ class RegionCategories(models.Model):
     """Класс модели Регионы"""
 
     title = models.CharField('Регион', max_length=599, blank=True)
-
     is_active = models.BooleanField("Активный", default=True)
     created_date = models.DateTimeField("Дата создания", auto_now_add=True)
     update_date = models.DateTimeField('Дата обновления', auto_now=True)
@@ -28,7 +27,6 @@ class RatingSchool(models.Model):
     title_kg = RichTextUploadingField('Наименование на кыргызском', max_length=599, blank=True)
     percent_true = models.CharField('Процент прошедших', max_length=599, blank=True)
     percent_false = models.CharField('Процент непрошедших', max_length=599, blank=True)
-
     is_active = models.BooleanField("Активный", default=True)
     created_date = models.DateTimeField("Дата создания", auto_now_add=True)
     update_date = models.DateTimeField('Дата обновления', auto_now=True)
