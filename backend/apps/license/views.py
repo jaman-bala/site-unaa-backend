@@ -50,7 +50,7 @@ def get_dop(request):
 
 
 @router.get("/rating", response=List[RatingSchoolOUT])
-def get_rating():
+def get_rating(request):
     qs = RatingSchool.objects.all()
     return [RatingSchoolOUT.from_orm(rating) for rating in qs]
 
