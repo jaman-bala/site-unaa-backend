@@ -125,8 +125,8 @@ class RatingSchoolBase(Schema):
     logo: str
     title_ru: str
     title_kg: str
-    percent_true: str
-    percent_false: str
+    percent_true: int
+    percent_false: int
 
     is_active: bool
     created_date: datetime
@@ -140,8 +140,8 @@ class RatingSchoolOUT(Schema):
     title_ru: str
     title_kg: str
 
-    percent_true: str
-    percent_false: str
+    percent_true: int
+    percent_false: int
 
     class Config:
         orm_mode = True
