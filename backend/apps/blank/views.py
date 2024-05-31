@@ -3,7 +3,8 @@ from ninja import Router
 
 from backend.apps.blank.documents import VisualDocuments, BusinessContact
 from backend.apps.blank.models import PDF
-from backend.apps.blank.schemas import PDFOut, VisualDocumentsSchemasOUT, BusinessContactSchemasOUT
+from backend.apps.blank.rating import RatingSchool
+from backend.apps.blank.schemas import PDFOut, VisualDocumentsSchemasOUT, BusinessContactSchemasOUT, RatingSchoolOUT
 
 router = Router()
 
@@ -25,3 +26,8 @@ def get_contact(request):
     qs = BusinessContact.objects.all()
     return qs
 
+
+@router.get("/rating", response=List[RatingSchoolOUT])
+def get_rating(request):
+    qs = RatingSchool.objects.all()
+    return [RatingSchoolOUT.from_orm(rating) for rating in qs]

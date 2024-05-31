@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from backend.apps.license.models import License, Documents, DocumentsNPA, DopDoc, RatingSchool, RegionCategories
+from backend.apps.blank.rating import RatingSchool
+from backend.apps.license.models import License, Documents, DocumentsNPA, DopDoc, RegionCategories
 from backend.apps.blank.documents import VisualDocuments, BusinessContact
 
 
