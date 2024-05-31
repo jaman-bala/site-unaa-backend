@@ -6,6 +6,7 @@ class IndexSchema(Schema):
     id: int
     title: str
     file: str
+
     created_date: datetime
     is_active: bool
 
@@ -13,7 +14,7 @@ class IndexSchema(Schema):
 class IndexOUT(Schema):
     id: int
     title: str
-    image: str
+    file: str
 
     class Config:
         orm_mode = True
