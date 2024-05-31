@@ -12,9 +12,6 @@ class RegionCategoriesBase(Schema):
 class RegionCategoriesOUT(Schema):
     id: int
     title: str
-    is_active: bool
-    created_date: datetime
-    update_date: datetime
 
     class Config:
         orm_mode = True
@@ -40,9 +37,6 @@ class RatingSchoolOUT(Schema):
     title_kg: str
     percent_true: str
     percent_false: str
-    is_active: bool
-    created_date: datetime
-    update_date: datetime
 
     class Config:
         orm_mode = True
