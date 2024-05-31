@@ -7,8 +7,8 @@ from backend.apps.license.models import DocumentsNPA
 from backend.apps.license.models import DopDoc
 from backend.apps.license.models import RegionCategories
 from backend.apps.license.models import RatingSchool
-from backend.apps.license.models import VisualDocuments
-from backend.apps.license.models import BusinessContact
+from backend.apps.license.documents import VisualDocuments
+from backend.apps.license.documents import BusinessContact
 
 from backend.apps.license.schemas import LicenseOUT
 from backend.apps.license.schemas import DocumentsOUT

@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from backend.apps.license.models import License, Documents, DocumentsNPA, DopDoc, RatingSchool, RegionCategories, VisualDocuments, BusinessContact
+from backend.apps.license.models import License, Documents, DocumentsNPA, DopDoc, RatingSchool, RegionCategories
+from backend.apps.license.documents import VisualDocuments, BusinessContact
 
 
 @admin.register(Documents)
