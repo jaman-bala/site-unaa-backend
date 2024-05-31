@@ -7,8 +7,6 @@ from backend.apps.license.models import DocumentsNPA
 from backend.apps.license.models import DopDoc
 from backend.apps.license.models import RegionCategories
 from backend.apps.license.models import RatingSchool
-from backend.apps.blank.documents import VisualDocuments
-from backend.apps.blank.documents import BusinessContact
 
 from backend.apps.license.schemas import LicenseOUT
 from backend.apps.license.schemas import DocumentsOUT
@@ -16,8 +14,6 @@ from backend.apps.license.schemas import DocumentsNPAOUT
 from backend.apps.license.schemas import DopDocSchemasOUT
 from backend.apps.license.schemas import RegionCategoriesOUT
 from backend.apps.license.schemas import RatingSchoolOUT
-from backend.apps.license.schemas import VisualDocumentsSchemasOUT
-from backend.apps.license.schemas import BusinessContactSchemasOUT
 
 
 router = Router()
