@@ -48,11 +48,11 @@ class RegionCategoriesAdmin(admin.ModelAdmin):
     save_on_top = True
 
 
-@admin.register(Props)
-class PropsAdmin(admin.ModelAdmin):
-    list_display = ('title_ru', 'is_active', 'created_date', 'update_date')
-
-
-@admin.register(Contact)
-class ContactAdmin(admin.ModelAdmin):
-    list_display = ('title_ru', 'is_active', 'created_date', 'update_date')
+# @admin.register(Props)
+# class PropsAdmin(admin.ModelAdmin):
+#     list_display = ('title_ru', 'is_active', 'created_date', 'update_date')
+#
+#
+# @admin.register(Contact)
+# class ContactAdmin(admin.ModelAdmin):
+#     list_display = ('title_ru', 'is_active', 'created_date', 'update_date')

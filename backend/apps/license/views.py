@@ -58,14 +58,14 @@ def get_rating(request):
     return qs
 
 
-@router.get("/props", response=List[PropsSchemasOUT])
-def get_props(request):
-    qs = Props.objects.all()
-    return qs
-
-
-@router.get("/contact", response=List[ContactSchemasOUT])
-def get_contact(request):
-    qs = Contact.objects.all()
-    return qs
-
+# @router.get("/props", response=List[PropsSchemasOUT])
+# def get_props(request):
+#     qs = Props.objects.all()
+#     return qs
+#
+#
+# @router.get("/contact", response=List[ContactSchemasOUT])
+# def get_contact(request):
+#     qs = Contact.objects.all()
+#     return qs
+#
