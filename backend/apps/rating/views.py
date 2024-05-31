@@ -7,7 +7,6 @@ from backend.apps.rating.schemas import RegionCategoriesOUT, RatingSchoolOUT
 router = Router()
 
 
-# Create your views here.
 @router.get("/regions", response=List[RegionCategoriesOUT])
 def get_region(request):
     qs = RegionCategories.objects.all()
