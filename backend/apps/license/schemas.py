@@ -104,43 +104,4 @@ class LicenseOUT(Schema):
         orm_mode = True
 
 
-class RegionCategoriesBase(Schema):
-    title: str
 
-    is_active: bool
-    created_date: datetime
-    update_date: datetime
-
-
-class RegionCategoriesOUT(Schema):
-    id: int
-    title: str
-
-    class Config:
-        orm_mode = True
-
-
-class RatingSchoolBase(Schema):
-    regions: int
-    logo: str
-    title_ru: str
-    title_kg: str
-    percent_true: int
-    percent_false: int
-
-    is_active: bool
-    created_date: datetime
-    update_date: datetime
-
-
-class RatingSchoolOUT(Schema):
-    id: int
-    regions: int
-    logo: str
-    title_ru: str
-    title_kg: str
-    percent_true: int
-    percent_false: int
-
-    class Config:
-        orm_mode = True
