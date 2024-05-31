@@ -26,8 +26,8 @@ class RatingSchool(models.Model):
     logo = models.ImageField('Логотип', upload_to="license/logo", blank=True)
     title_ru = RichTextUploadingField('Наименование на русском', max_length=599, blank=True)
     title_kg = RichTextUploadingField('Наименование на кыргызском', max_length=599, blank=True)
-    percent_true = models.IntegerField('Процент прошедших', blank=True)
-    percent_false = models.IntegerField('Процент непрошедших', blank=True)
+    percent_true = models.CharField('Процент прошедших', max_length=599, blank=True)
+    percent_false = models.CharField('Процент непрошедших', max_length=599, blank=True)
 
     is_active = models.BooleanField("Активный", default=True)
     created_date = models.DateTimeField("Дата создания", auto_now_add=True)
