@@ -86,23 +86,5 @@ class License(models.Model):
         verbose_name_plural = 'Лизензии для автошкол'
 
 
-class RegionCategories(models.Model):
-    """Класс модели Регионы"""
-
-    title = models.CharField('Регион', max_length=599, blank=True)
-
-    is_active = models.BooleanField("Активный", default=True)
-    created_date = models.DateTimeField("Дата создания", auto_now_add=True)
-    update_date = models.DateTimeField('Дата обновления', auto_now=True)
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name = 'Регионы'
-        verbose_name_plural = 'Регион'
-
-
-
 
 

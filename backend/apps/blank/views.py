@@ -3,8 +3,9 @@ from ninja import Router
 
 from backend.apps.blank.documents import VisualDocuments, BusinessContact
 from backend.apps.blank.models import PDF
-from backend.apps.blank.rating import RatingSchool
-from backend.apps.blank.schemas import PDFOut, VisualDocumentsSchemasOUT, BusinessContactSchemasOUT, RatingSchoolOUT
+from backend.apps.blank.rating import RatingSchool, RegionCategories
+from backend.apps.blank.schemas import PDFOut, VisualDocumentsSchemasOUT, BusinessContactSchemasOUT, RatingSchoolOUT, \
+    RegionCategoriesOUT
 
 router = Router()
 
@@ -24,6 +25,12 @@ def get_props(request):
 @router.get("/contact", response=List[BusinessContactSchemasOUT])
 def get_contact(request):
     qs = BusinessContact.objects.all()
+    return qs
+
+
+@router.get("/regions", response=List[RegionCategoriesOUT])
+def get_region(request):
+    qs = RegionCategories.objects.all()
     return qs
 
 

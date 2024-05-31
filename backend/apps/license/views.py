@@ -5,13 +5,11 @@ from backend.apps.license.models import License
 from backend.apps.license.models import Documents
 from backend.apps.license.models import DocumentsNPA
 from backend.apps.license.models import DopDoc
-from backend.apps.license.models import RegionCategories
 
 from backend.apps.license.schemas import LicenseOUT
 from backend.apps.license.schemas import DocumentsOUT
 from backend.apps.license.schemas import DocumentsNPAOUT
 from backend.apps.license.schemas import DopDocSchemasOUT
-from backend.apps.license.schemas import RegionCategoriesOUT
 
 
 router = Router()
@@ -32,12 +30,6 @@ def get_documents_npa(request):
 @router.get("/car", response=List[LicenseOUT])
 def get_license(request):
     qs = License.objects.all()
-    return qs
-
-
-@router.get("/regions", response=List[RegionCategoriesOUT])
-def get_region(request):
-    qs = RegionCategories.objects.all()
     return qs
 
 
